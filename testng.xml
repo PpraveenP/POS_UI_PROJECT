@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <parameter name="browser" value="chrome"></parameter>
+    <test verbose="2" preserve-order="true" name="C:/Users/POS PHP/IdeaProjects/POS UI Test">
+        <classes>
+<!--            <class name="org.example.POS_UI_Test.TestCases.Dashboard.DashBoard_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Dashboard_Button_Link"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.FoodManagement.Add_Addons_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Add_Addons_Form"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.FoodManagement.Add_Menu_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Add_Menu_Form"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.InventoryManagement.Add_Inventory_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Add_Inventory_Form"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.OrderManagement.NewOrder.PlaceOrder.Place_Order_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Place_Order_Process"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.ProfileSetting.POS_Setting.POS_Setting_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_POS_Setting_Form"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.ProfileSetting.PaymentSetting.Add_New_Payment_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Add_New_Payment_Form"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="org.example.POS_UI_Test.TestCases.Store_Login.Store_Login_Test">
+                <methods>
+                    <include name="ValidatingStoreLogin"/>
+                </methods>
+            </class>
+<!--            <class name="org.example.POS_UI_Test.TestCases.TechnicianDashboard.StoreManagement.Add_New_Store_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Add_New_Store_Registration_Form"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.TechnicianDashboard.StoreManagement.Free_Trial_Access_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Store_Registration_Form"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.UserManagement.Add_User_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Add_User_Form"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.VendorManagement.Add_Vendor_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Add_Vendor_form"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.VendorManagement.Vendor_Inventory_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Vendor_Inventory_Form"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.VendorManagement.Vendor_Payment_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_the_VendorPayment_Form"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+        </classes>
+    </test>
+</suite>
