@@ -7,6 +7,7 @@ import org.example.UserPayLoads.Add_Vendor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
@@ -22,36 +23,20 @@ public class Vendor_Payment_Test extends BaseClass {
         Vendor_Payment_Objects vp=new Vendor_Payment_Objects(driver);
         Faker fk=new Faker();
         ad.setVendorName(fk.name().firstName());
-        ad.setBankName(fk.name().lastName()+"Bank");
-        ad.setBranch(fk.name().lastName());
+        ad.setBankName(fk.name().firstName()+"Bank");
+        ad.setBranch(fk.address().cityName());
         ad.setAccountNo(fk.number().digits(12));
         ad.setIfscCode("SYNB0"+fk.number().digits(6));
         ad.setUpiId(fk.name().username()+"23@ybl");
         ad.setTotal(fk.number().digits(4));
 
-        String currentDate = new SimpleDateFormat("mm-dd-yyyy").format(new Date());
-        System.out.println(currentDate);
-        ad.setDueDate(currentDate);
+        String date = new SimpleDateFormat("MM-dd-yyyy").format(new Date());
+        ad.setDueDate(date);
 
 
         vp.ClickOnButtons("Vendor Management");
         vp.ClickOnButtons("Vendor Payment");
 
-//        System.out.println(driver.findElement(By.xpath("//span[normalize-space()=\"Vendor Payment\"]")).getText());
-//        vp.EnterTheText("vendorName",ad.getVendorName());
-
-//        Select dropdown = new Select(driver.findElement(By.id(":rb:")));
-//        List<WebElement> options = dropdown.getOptions();
-//        dropdown.selectByIndex(2);
-
-//        for (int i=2; i<=4; i++)
-//        {
-//            driver.findElement(By.xpath("//div[@id=\"mui-component-select-vendorName\"]")).click();
-//            driver.findElement(By.xpath("//div[@id=\"menu-vendorName\"]//li["+i+"]")).click();
-//        }
-
-//        driver.findElement(By.xpath("//div[@id=\"mui-component-select-vendorName\"]")).click();
-//        driver.findElement(By.xpath("//div[@id=\"menu-vendorName\"]//li[3]")).click();
 
         vp.ClickOnDropDown("mui-component-select-vendorName");
         driver.findElement(By.xpath("//li[normalize-space()=\"harish\"]")).click();
@@ -65,6 +50,9 @@ public class Vendor_Payment_Test extends BaseClass {
 
         vp.ClickOnSubmit();
         Thread.sleep(2000);
+        String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
+        System.out.println(message);
+        Validation("Form Submit Successfull !",message,driver);
 
     }
 }

@@ -6,6 +6,7 @@ import org.example.POS_UI_Test.TestCases.BaseClass;
 import org.example.UserPayLoads.Add_Vendor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -23,8 +24,8 @@ public class Add_Vendor_Test extends BaseClass {
         av.setVendorCode(fk.code().isbnGs1());
         av.setVendorAddress(fk.address().fullAddress());
         av.setMobileNo(fk.phoneNumber().subscriberNumber(10));
-        av.setBankName(fk.name().firstName()+" Bank");
-        av.setBranch(fk.name().lastName());
+        av.setBankName(fk.address().cityName()+" Bank");
+        av.setBranch(fk.address().cityName());
         av.setAccountNo(fk.number().digits(13));
         av.setIfscCode("SYNB0"+fk.number().digits(6));
         av.setUpiId(fk.name().username()+"@ybl");
@@ -46,7 +47,10 @@ public class Add_Vendor_Test extends BaseClass {
         vo.Enter_The_Text_Fields("ifscCode", av.getIfscCode());
         vo.Enter_The_Text_Fields("upiId", av.getUpiId());
         vo.clickfuction("Submit");
-        Thread.sleep(5000);
+        Thread.sleep(2000);
+        String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
+//        System.out.println(message);
+        Validation("Form Submit Successfull !",message,driver);
 
     }
 

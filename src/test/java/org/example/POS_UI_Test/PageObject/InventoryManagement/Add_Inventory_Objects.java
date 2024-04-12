@@ -9,16 +9,16 @@ public class Add_Inventory_Objects {
 
     WebDriver ldriver;
     public static WebElement[] ai;
-    public  static  WebElement[] bi;
     public  static  WebElement[] di;
+    public  static  WebElement[] db;
 
 
     public Add_Inventory_Objects(WebDriver rdriver) {
         ldriver = rdriver;
         PageFactory.initElements(rdriver, this);
-        ai= new WebElement[]{name, inventoryCode, price, quantity, minLevel,expiryDate};
-        bi=new WebElement[]{Category,unit,minLevelUnit};
+         ai= new WebElement[]{name, inventoryCode, price, quantity, minLevel,expiryDate};
         di=new WebElement[]{Material,kilograms,Gram,Submit};
+        db=new WebElement[]{selectcategory,unit,minLevelUnit};
     }
 
 
@@ -42,8 +42,8 @@ public class Add_Inventory_Objects {
     @FindBy(xpath = "//input[@name=\"inventoryCode\"]")
     WebElement inventoryCode;
 
-    @FindBy(id = "//div[@id=\"mui-component-select-category\"]")
-    WebElement Category;
+    @FindBy(xpath = "//div[@id=\"mui-component-select-category\"]")
+    WebElement selectcategory;
 
     @FindBy(xpath = "//input[@name=\"price\"]")
     WebElement price;
@@ -77,6 +77,10 @@ public class Add_Inventory_Objects {
 
     @FindBy(xpath = "//ul[@id=\":r1:\"]")
     WebElement dropdown;
+    public void ClickSubmitButton()
+    {
+        Submit.click();
+    }
 
 
 
@@ -89,26 +93,28 @@ public class Add_Inventory_Objects {
         }
     }
     public void Enter_Dropdown_Fields(String name) {
-        for (WebElement element : di) {
-            if (element.getAttribute("name").contains(name)) {
+        for (WebElement element : db) {
+            if (element.getAttribute("id").contains(name)) {
                 element.click();
                 break;
             }
         }
     }
 
-
-//    public void Click_Operation(String name) {
-//        for (WebElement button : ai)
-//            if (button.getText().equals(name)) {
-//                button.click();
-//                break; // Break the loop once the button is found
-//            }
-//    }
-//    public void Enter_DropdownBox()
-//    {
-//
-//    }
-
+    public void ClickOnDropdownoptions(String name)
+    {
+        if (name.equals("Material"))
+        {
+            Material.click();
+        }
+        if (name.equals("kilograms"))
+        {
+            kilograms.click();
+        }
+        if (name.equals("Gram"))
+        {
+            Gram.click();
+        }
+    }
 
 }

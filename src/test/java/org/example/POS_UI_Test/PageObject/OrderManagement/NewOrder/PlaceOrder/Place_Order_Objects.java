@@ -39,11 +39,21 @@ public class Place_Order_Objects {
     }
     @FindBy(xpath = "//button[normalize-space()=\"Place Order\"]")
     WebElement PlaceOrder;
-
-
     public void ClickOnPlaceOrder()
     {
         PlaceOrder.click();
+    }
+    @FindBy(xpath = "//div[@id=\"demo-simple-select\"]")
+    WebElement selectTable;
+    public void ClickOnselectTable()
+    {
+        selectTable.click();
+    }
+    @FindBy(xpath = "//li[normalize-space()=\"3\"]")
+    WebElement TableNo;
+    public void selectTableNo()
+    {
+        TableNo.click();
     }
     public void ClickOnButton(String name)
     {

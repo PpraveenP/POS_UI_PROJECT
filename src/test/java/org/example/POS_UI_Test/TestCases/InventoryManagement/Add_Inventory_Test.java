@@ -7,6 +7,7 @@ import org.example.UserPayLoads.Add_Inventory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
@@ -25,7 +26,7 @@ public class Add_Inventory_Test extends BaseClass {
         ad.setInventoryCode(fk.number().digits(2));
         ad.setPrice(fk.number().digits(3));
         ad.setQuantity(fk.number().digits(2));
-        String date=new SimpleDateFormat("mm-dd-yyyy").format(new Date());
+        String date = new SimpleDateFormat("MM-dd-yyyy").format(new Date());
         ad.setExpiryDate(date);
         ad.setMinLevel(fk.number().digits(2)+2);
 
@@ -40,29 +41,24 @@ public class Add_Inventory_Test extends BaseClass {
         io.Enter_text_Fields("quantity",ad.getQuantity());
         io.Enter_text_Fields("minLevel",ad.getMinLevel());
         io.Enter_text_Fields("expiryDate",ad.getExpiryDate());
+        io.Enter_Dropdown_Fields("select-category");
+//        driver.findElement(By.xpath("div[id=\"menu-category\"] li:nth-child(4)")).click();
+       int size= driver.findElements(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li")).size();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li["+size+"]")).click();
 
-//        driver.findElement(By.xpath("//li[normalize-space()=\"Select Category\"]")).click();
-//        List<WebElement> categoryDropdown = driver.findElements(By.xpath("//ul[@id=\":r8:\"]"));
-//        for (WebElement d:categoryDropdown)
-//        {
-//
-//            if (d.getTagName().contains("Grocery"))
-//            {
-//                d.click();
-//            }
-//        }
-//
-//        io.Enter_Dropdown_Fields("Material");
-//        io.Enter_Dropdown_Fields("kilograms");
-//        io.Enter_Dropdown_Fields("Gram");
+        io.Enter_Dropdown_Fields("select-unit");
+        int size1= driver.findElements(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li")).size();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li["+size1+"]")).click();
 
-        WebElement category = driver.findElement(By.xpath("//ul[@id=\":r1:\"]"));
-        Select s=new Select(category);
-        Thread.sleep(3000);
-        List<WebElement> allOp = s.getOptions();
-        for (int i=0;i<=allOp.size();i++)
-        {
-            System.out.println(allOp.get(i).getText());
-        }
+        io.Enter_Dropdown_Fields("minLevelUnit");
+        int size2= driver.findElements(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li")).size();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li["+size2+"]")).click();
+
+        io.ClickSubmitButton();
+        Thread.sleep(2000);
+        String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
+        Validation("Form Submit successfully !",message,driver);
+
+
     }
 }

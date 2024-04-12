@@ -20,15 +20,19 @@ public class Vendor_Inventory_Objects {
     {
         ldriver=rdriver;
         PageFactory.initElements(rdriver,this);
-        tx=new WebElement[]{inventoryCode,quantity,price,discount};
+        tx=new WebElement[]{inventoryCode,quantity,price,discount,itemName};
         bt=new WebElement[]{VendorManagement,VendorInventory};
-        dp=new WebElement[]{selectVendorName,selectItemName,selectUnit};
+        dp=new WebElement[]{vendorName,selectUnit};
         vv=new WebElement[]{Kg,Gram,Pieces};
     }
     @FindBy(xpath = "//p[normalize-space()=\"Vendor Management\"]")
     WebElement VendorManagement;
     @FindBy(xpath = "//span[normalize-space()=\"Vendor Inventory\"]")
     WebElement VendorInventory;
+    @FindBy(xpath = "//div[@id=\"mui-component-select-vendorName\"]")
+    WebElement vendorName;
+    @FindBy(xpath = "//input[@name=\"itemName\"]")
+    WebElement itemName;
 
     @FindBy(xpath = "//input[@name=\"inventoryCode\"]")
     WebElement inventoryCode;
@@ -44,6 +48,10 @@ public class Vendor_Inventory_Objects {
 
     @FindBy(xpath = "//button[normalize-space()=\"Submit\"]")
     WebElement Submit;
+    public void ClickOnSubmit()
+    {
+        Submit.click();
+    }
 
     @FindBy(xpath = "//div[@id=\"mui-component-select-vendorName\"]")
     WebElement selectVendorName;
@@ -56,6 +64,10 @@ public class Vendor_Inventory_Objects {
 
     @FindBy(xpath = "//li[normalize-space()=\"Kg\"]")
     WebElement Kg;
+    public void ClickOnKg()
+    {
+        Kg.click();
+    }
     @FindBy(xpath = "//li[normalize-space()=\"Gram\"]")
     WebElement Gram;
     @FindBy(xpath = "//li[normalize-space()=\"Pieces\"]")
@@ -86,20 +98,14 @@ public class Vendor_Inventory_Objects {
         }
 
     }
-    public void ClickDropDown(String name,String value)
+    public void ClickDropDown(String name)
     {
         for (WebElement e:dp)
         {
-            if (e.getText().contains(name))
+            if(e.getText().contains(name))
             {
-                for (WebElement c:vv)
-                {
-                    if(e.getText().contains(name)&&c.getText().contains(value))
-                    {
-                        e.click();
-                        c.click();
-                    }
-                }
+                e.click();
+
             }
         }
     }

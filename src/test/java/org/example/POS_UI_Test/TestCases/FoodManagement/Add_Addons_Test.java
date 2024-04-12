@@ -5,12 +5,15 @@ import org.example.POS_UI_Test.PageObject.FoodManagement.Add_Addons_Objects;
 import org.example.POS_UI_Test.TestCases.BaseClass;
 import org.example.UserPayLoads.Add_Inventory;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
 
 public class Add_Addons_Test extends BaseClass {
     @Test
-            public void Validating_Add_Addons_Form()
-    {
+            public void Validating_Add_Addons_Form() throws InterruptedException {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Add_Inventory ai=new Add_Inventory();
         Faker fk=new Faker();
         ai.setName(fk.food().ingredient());
@@ -38,8 +41,10 @@ public class Add_Addons_Test extends BaseClass {
 
         ao.ClikOnCheckbox();
         ao.ClickOnSybmit();
-
-
+        Thread.sleep(2000);
+        String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
+//        System.out.println(message);
+        Validation("Form Submit Successfull !",message,driver);
     }
 
 }

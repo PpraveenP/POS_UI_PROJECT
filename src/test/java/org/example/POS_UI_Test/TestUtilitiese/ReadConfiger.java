@@ -56,4 +56,14 @@ public class ReadConfiger {
         String username=pos.getProperty("Username");
         return username;
     }
+    public String getTechPassword()
+    {
+        String password=pos.getProperty("Tech0-Password");
+        return password;
+    }
+    public String getTechUsername()
+    {
+        String username=pos.getProperty("Tech-Username");
+        return username;
+    }
 }

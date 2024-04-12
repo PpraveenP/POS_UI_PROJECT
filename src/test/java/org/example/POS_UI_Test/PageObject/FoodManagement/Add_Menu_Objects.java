@@ -38,7 +38,18 @@ public class Add_Menu_Objects {
     WebElement description;
     @FindBy(xpath = "//input[@name=\"image\"]")
     WebElement image;
-
+    @FindBy(xpath = "(//input[@type='file'])[1]")
+    WebElement ChoseFile;
+    public void ClickOnChosefile(String file)
+    {
+        ChoseFile.sendKeys(file);
+    }
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/main[1]/div[1]/div[1]/div[3]/button[1]/*[name()='svg'][1]")
+    WebElement Upload;
+    public void ClickonUpload()
+    {
+        Upload.click();
+    }
 
     @FindBy(xpath = "//button[normalize-space()=\"Submit\"]")
     WebElement Submit;

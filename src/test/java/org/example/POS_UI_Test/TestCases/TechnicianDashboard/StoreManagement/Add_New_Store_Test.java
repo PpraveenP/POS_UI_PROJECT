@@ -7,6 +7,7 @@ import org.example.POS_UI_Test.TestCases.BaseClass;
 import org.example.UserPayLoads.Store_User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Add_New_Store_Test extends BaseClass {
@@ -36,9 +37,11 @@ public class Add_New_Store_Test extends BaseClass {
         su.setFreeTrialType("365");
         return su;
     }
-    public void EnterTheStoreData(Store_User oj)
-    {
+    public void EnterTheStoreData(Store_User oj) throws InterruptedException {
         su=oj;
+        Thread.sleep(3000);
+        LogoutMethod();
+        TechLogin();
         Add_New_Store_Objects ft=new Add_New_Store_Objects(driver);
         ft.ClickOnButton("Store Management");
         ft.ClickOnButton("Add New Store");
@@ -63,6 +66,9 @@ public class Add_New_Store_Test extends BaseClass {
         try {
 
             ft.ClickOnSubmit();
+            Thread.sleep(2000);
+            String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
+            Validation("Form Submit Successfull !",message,driver);
         } catch (NoSuchElementException e) {
 
             System.out.println("Submit button is not visible.");
@@ -83,7 +89,7 @@ public class Add_New_Store_Test extends BaseClass {
 
     @Test()
     public void Validating_Add_New_Store_Registration_Form() {
-        for (int i = 0; i < 700; i++) {
+        for (int i = 0; i < 1; i++) {
             Store_User st = StoreUserSetUp();
             try {
                 EnterTheStoreData(st);

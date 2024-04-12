@@ -4,6 +4,12 @@
     <parameter name="browser" value="chrome"></parameter>
     <test verbose="2" preserve-order="true" name="C:/Users/POS PHP/IdeaProjects/POS UI Test">
         <classes>
+<!--            <class name="org.example.POS_UI_Test.TestCases.ChashManagement.Cash_Register_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_AddMoreAmount"/>-->
+<!--                    <include name="Validating_Expense_Process"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 <!--            <class name="org.example.POS_UI_Test.TestCases.Dashboard.DashBoard_Test">-->
 <!--                <methods>-->
 <!--                    <include name="Validating_Dashboard_Button_Link"/>-->
@@ -17,6 +23,12 @@
 <!--            <class name="org.example.POS_UI_Test.TestCases.FoodManagement.Add_Menu_Test">-->
 <!--                <methods>-->
 <!--                    <include name="Validating_Add_Menu_Form"/>-->
+<!--                    <include name="Validating_Upload_Food_List"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.FoodManagement.Add_Recipe_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Add_Recipe_Form"/>-->
 <!--                </methods>-->
 <!--            </class>-->
 <!--            <class name="org.example.POS_UI_Test.TestCases.InventoryManagement.Add_Inventory_Test">-->
@@ -24,14 +36,59 @@
 <!--                    <include name="Validating_Add_Inventory_Form"/>-->
 <!--                </methods>-->
 <!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.InventoryManagement.Inventory_List_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Inventory_List"/>-->
+<!--                    <include name="Validating_Inventory_List_UpdateButton"/>-->
+<!--                    <include name="Validating_Inventory_List_PDF_Button"/>-->
+<!--                    <include name="Validating_Inventory_List_Excel_Button"/>-->
+<!--                    <include name="Validating_Inventory_List_Delete_Button"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.OrderManagement.NewOrder.KOT.Kot_Order_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_KOT_Process_With_Card_Take_Away_OrderType"/>-->
+<!--                    <include name="Validating_KOTl_Process_With_Cash_TakeAway_OrderType"/>-->
+<!--                    <include name="Validating_KOT_Process_With_UPI_TakeAway_OrderType"/>-->
+<!--                    <include name="Validating_KOT_Process_With_Card_Delivery_OrderType"/>-->
+<!--                    <include name="Validating_KOT_Process_With_Cash_Delivery_OrderType"/>-->
+<!--                    <include name="Validating_KOT_Process_With_UPI_Delivery_OrderType"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.OrderManagement.NewOrder.KOT_Prepared.KOT.KOT_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_KOT_Prepared_Process"/>-->
+<!--                    <include name="Validating_KOT_Prepare_Process_For_All_Order"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 <!--            <class name="org.example.POS_UI_Test.TestCases.OrderManagement.NewOrder.PlaceOrder.Place_Order_Test">-->
 <!--                <methods>-->
-<!--                    <include name="Validating_Place_Order_Process"/>-->
+<!--                    <include name="Validating_Place_Order_Process_Through_TakeAway"/>-->
+<!--                    <include name="Validating_Place_Order_Process_Through_Delivery"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.OrderManagement.NewOrder.QuickBill.Quck_Bill_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Quick_Bill_Process_With_Card_DineIn_OrderType"/>-->
+<!--                    <include name="Validating_Quick_Bill_Process_With_Cash_DineIn_OrderType"/>-->
+<!--                    <include name="Validating_Quick_Bill_Process_With_UPI_DineIn_OrderType"/>-->
+<!--                    <include name="Validating_Quick_Bill_Process_With_Card_Take_Away_OrderType"/>-->
+<!--                    <include name="Validating_Quick_Bill_Process_With_Cash_TakeAway_OrderType"/>-->
+<!--                    <include name="Validating_Quick_Bill_Process_With_UPI_TakeAway_OrderType"/>-->
+<!--                    <include name="Validating_Quick_Bill_Process_With_Card_Delivery_OrderType"/>-->
+<!--                    <include name="Validating_Quick_Bill_Process_With_Cash_Delivery_OrderType"/>-->
+<!--                    <include name="Validating_Quick_Bill_Process_With_UPI_Delivery_OrderType"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.OrderManagement.PendingOrder.RunningOrder_Page_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Running_Order_Page"/>-->
 <!--                </methods>-->
 <!--            </class>-->
 <!--            <class name="org.example.POS_UI_Test.TestCases.ProfileSetting.POS_Setting.POS_Setting_Test">-->
 <!--                <methods>-->
 <!--                    <include name="Validating_POS_Setting_Form"/>-->
+<!--                    <include name="Validating_POS_Setting_Form_for_category"/>-->
 <!--                </methods>-->
 <!--            </class>-->
 <!--            <class name="org.example.POS_UI_Test.TestCases.ProfileSetting.PaymentSetting.Add_New_Payment_Test">-->
@@ -39,11 +96,43 @@
 <!--                    <include name="Validating_Add_New_Payment_Form"/>-->
 <!--                </methods>-->
 <!--            </class>-->
-            <class name="org.example.POS_UI_Test.TestCases.Store_Login.Store_Login_Test">
-                <methods>
-                    <include name="ValidatingStoreLogin"/>
-                </methods>
-            </class>
+<!--            <class name="org.example.POS_UI_Test.TestCases.ProfileSetting.TaxSetting.Tax_Setting_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_TaxSetting_Form"/>-->
+<!--                    <include name="Validating_TaxSetting_Update_Process"/>-->
+<!--                    <include name="Validating_TaxSetting_Delete_Operation"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.RoleManagement.UpdateRoleAccess.Update_Role_Access_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Update_Role_Access"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.RoleManagement.UserRoleAccess.User_Role_Access_Test">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_User_Role_Access"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.Store_Login.Add_Menu_For_All_Store">-->
+<!--                <methods>-->
+<!--                    <include name="AddMenu_Form_For_All_Store"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.Store_Login.Add_POS_Setting_For_All_Store">-->
+<!--                <methods>-->
+<!--                    <include name="Valiadting_POS_Setting_For_AllStore"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.Store_Login.Store_Login_Test">-->
+<!--                <methods>-->
+<!--                    <include name="ValidatingStoreLogin"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="org.example.POS_UI_Test.TestCases.Store_Login.Upload_Food_List_For_All_Store">-->
+<!--                <methods>-->
+<!--                    <include name="Validating_Upload_Food_List_For_All_Store"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 <!--            <class name="org.example.POS_UI_Test.TestCases.TechnicianDashboard.StoreManagement.Add_New_Store_Test">-->
 <!--                <methods>-->
 <!--                    <include name="Validating_Add_New_Store_Registration_Form"/>-->

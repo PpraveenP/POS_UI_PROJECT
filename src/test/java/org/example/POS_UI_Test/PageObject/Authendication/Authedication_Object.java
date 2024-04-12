@@ -21,9 +21,19 @@ public class Authedication_Object {
     WebElement Login;
     @FindBy(xpath = "//div[@class=\"MuiStack-root css-1hu592v\"]")
     WebElement profile;
+//@FindBy(xpath = "//button[@class=\"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root\"]")
+//WebElement profile;
+    public void ClickOnProfile()
+    {
+        profile.click();
+    }
 
     @FindBy(xpath = "//p[normalize-space()=\"Logout\"]")
     WebElement Logout;
+    public void ClickOnLogout()
+    {
+        Logout.click();
+    }
     public void LoginOperation(String name , String value)
     {
        if (name.contains("username"))

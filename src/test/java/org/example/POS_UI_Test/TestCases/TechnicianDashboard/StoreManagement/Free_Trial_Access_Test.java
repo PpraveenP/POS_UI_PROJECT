@@ -5,11 +5,13 @@ import org.example.POS_UI_Test.PageObject.TechnicianDashboard.StoreManagement.Fr
 import org.example.POS_UI_Test.TestCases.BaseClass;
 import org.example.UserPayLoads.Store_User;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Free_Trial_Access_Test extends BaseClass {
     Store_User su;
     Faker fk;
+    Free_Trial_Access_Objects ft;
 
     public Store_User StoreDataSetUp()
     {
@@ -32,9 +34,11 @@ public class Free_Trial_Access_Test extends BaseClass {
         return  su;
 
     }
-    public void EnterTheStoreData(Store_User su)
-    {
-        Free_Trial_Access_Objects ft=new Free_Trial_Access_Objects(driver);
+    public void EnterTheStoreData(Store_User su) throws InterruptedException {
+        Thread.sleep(3000);
+        LogoutMethod();
+        TechLogin();
+        ft=new Free_Trial_Access_Objects(driver);
         ft.ClickOnButton("Store Management");
         ft.ClickOnButton("Free Trial Access");
 
@@ -55,13 +59,16 @@ public class Free_Trial_Access_Test extends BaseClass {
         ft.EnterTheTest("password","Praveen@123");
         ft.EnterTheTest("comfirmpassword","Praveen@123");
         ft.EnterTheTest("freeTrialType",su.getFreeTrialType());
-        ft.ClickOnSubmit();
+
     }
     @Test()
-    public void Validating_Store_Registration_Form()
-    {
+    public void Validating_Store_Registration_Form() throws InterruptedException {
         su=StoreDataSetUp();
         EnterTheStoreData(su);
+        ft.ClickOnSubmit();
+        Thread.sleep(2000);
+        String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
+        Validation("Form Submit Successfull !",message,driver);
 
     }
 }
