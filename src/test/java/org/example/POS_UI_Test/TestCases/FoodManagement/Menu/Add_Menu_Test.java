@@ -1,15 +1,13 @@
 package org.example.POS_UI_Test.TestCases.FoodManagement;
 
 import com.github.javafaker.Faker;
-import org.example.POS_UI_Test.PageObject.FoodManagement.Add_Menu_Objects;
+import org.example.POS_UI_Test.PageObject.FoodManagement.Menu.Add_Menu_Objects;
 import org.example.POS_UI_Test.TestCases.BaseClass;
 import org.example.UserPayLoads.Add_Inventory;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class Add_Menu_Test extends BaseClass {

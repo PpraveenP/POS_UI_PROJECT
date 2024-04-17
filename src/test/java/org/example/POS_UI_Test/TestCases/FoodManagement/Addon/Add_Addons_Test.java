@@ -1,11 +1,10 @@
 package org.example.POS_UI_Test.TestCases.FoodManagement;
 
 import com.github.javafaker.Faker;
-import org.example.POS_UI_Test.PageObject.FoodManagement.Add_Addons_Objects;
+import org.example.POS_UI_Test.PageObject.FoodManagement.Addon.Add_Addons_Objects;
 import org.example.POS_UI_Test.TestCases.BaseClass;
 import org.example.UserPayLoads.Add_Inventory;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;

@@ -1,13 +1,10 @@
 package org.example.POS_UI_Test.TestCases.FoodManagement;
 
 import com.github.javafaker.Faker;
-import org.example.POS_UI_Test.PageObject.FoodManagement.Add_Recipe_Objects;
+import org.example.POS_UI_Test.PageObject.FoodManagement.Recipe.Add_Recipe_Objects;
 import org.example.POS_UI_Test.TestCases.BaseClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class Add_Recipe_Test extends BaseClass {
     @Test()
@@ -20,13 +17,15 @@ public class Add_Recipe_Test extends BaseClass {
         ar.ClickOnDropdowns("mui-component-select-productName");
 
 //       driver.findElement(By.xpath("div[id=\"menu-productName\"] li:nth-child("+list.size()+")")).click();
-        driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li[3]")).click();
+        int size1=driver.findElements(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li")).size();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li["+size1+"]")).click();
 
 //        WebElement list = driver.findElement(By.className("MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1km1ehz"));
 //        System.out.println(list.getSize());
 
         ar.ClickOnDropdowns("ingredientName");
-        driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li[22]")).click();
+        int size=driver.findElements(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li")).size();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li["+size+"]")).click();
         Faker fk=new Faker();
         ar.EnterTheQuatity(fk.number().digits(1)+1);
 
