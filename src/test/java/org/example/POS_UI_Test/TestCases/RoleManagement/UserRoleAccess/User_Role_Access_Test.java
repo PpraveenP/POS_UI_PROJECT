@@ -15,6 +15,7 @@ public class User_Role_Access_Test extends BaseClass {
         int size = driver.findElements(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li")).size();
         System.out.println(size);
 //        driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li["+size+"]")).click();
+        Thread.sleep(2000);
         driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li["+size+"]")).click();
 
         for (int i=1; i<=9; i++)
@@ -30,3 +31,4 @@ public class User_Role_Access_Test extends BaseClass {
 
     }
 }
+

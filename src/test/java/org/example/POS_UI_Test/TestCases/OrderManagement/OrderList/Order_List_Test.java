@@ -1,6 +1,5 @@
 package org.example.POS_UI_Test.TestCases.OrderManagement.OrderList;
 
-import org.example.POS_UI_Test.PageObject.OrderManagement.BillList.Bill_List_Objects;
 import org.example.POS_UI_Test.PageObject.OrderManagement.OrderList.Order_List_Objects;
 import org.example.POS_UI_Test.TestCases.BaseClass;
 import org.testng.annotations.Test;

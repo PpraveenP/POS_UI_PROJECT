@@ -24,7 +24,7 @@ public class Add_New_Payment_Test extends BaseClass {
     }
     public void EnterTheData(Add_Vendor ad)
     {
-         ap=new Add_New_Payment_Objects(driver);
+        ap=new Add_New_Payment_Objects(driver);
 
         ap.ClickOnButton("Profile Settings");
         ap.ClickOnButton("Payment Settings");
@@ -34,7 +34,7 @@ public class Add_New_Payment_Test extends BaseClass {
         ap.EnterTheText("accountNo",ad.getAccountNo());
         ap.EnterTheText("ifscCode",ad.getIfscCode());
         ap.EnterTheText("upiId",ad.getUpiId());
-//        ap.ClickOnAddPaymentDetails();
+
 
     }
     @Test()
@@ -44,8 +44,34 @@ public class Add_New_Payment_Test extends BaseClass {
         ap.ClickOnAddPaymentDetails();
         Thread.sleep(2000);
         String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
-        System.out.println(message);
         Validation("Form Submit Successfull !",message,driver);
 
+    }
+    @Test()
+    public void Validating_Add_New_Payment_Edit_Button() throws InterruptedException {
+        ap=new Add_New_Payment_Objects(driver);
+
+        ap.ClickOnButton("Profile Settings");
+        ap.ClickOnButton("Payment Settings");
+        ap.ClickOnEdit();
+        Thread.sleep(1000);
+        ap.ClickOnUpdatePaymentDetails();
+        Thread.sleep(2000);
+        String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
+        Validation("Form Updated Successfull !",message,driver);
+
+    }
+    @Test()
+    public void Validating_Add_New_Payment_Delete_Button() throws InterruptedException {
+        ap=new Add_New_Payment_Objects(driver);
+
+        ap.ClickOnButton("Profile Settings");
+        ap.ClickOnButton("Payment Settings");
+        ap.ClickOnDelete();
+        Thread.sleep(1000);
+        ap.ClickOnDeleteYseButton();
+        Thread.sleep(2000);
+        String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
+        Validation("Payment Deleted successfully.. !",message,driver);
     }
 }

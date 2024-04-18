@@ -48,7 +48,7 @@ public class User_List_Test extends BaseClass {
         ul.ClickOnUpdate();
         Thread.sleep(1000);
         String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
-        Validation("Form Updated Successfully!",message,driver);
+        Validation("Form updated successfully!",message,driver);
     }
     @Test()
     public void Validating_USer_List_Delete_Link() throws InterruptedException {

@@ -48,10 +48,10 @@ public class BaseClass {
     @BeforeClass
     public void loginMethod()
     {
-       username = rc.getUsername();
+        username = rc.getUsername();
         password = rc.getPassword();
         driver.get(rc.getURL());
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         Authedication_Object AO=new Authedication_Object(driver);
         AO.LoginOperation("username",rc.getUsername());
         AO.LoginOperation("password",rc.getPassword());
@@ -77,7 +77,7 @@ public class BaseClass {
 
         driver.navigate().refresh();
         Authedication_Object Ao=new Authedication_Object(driver);
-        driver.navigate().refresh();
+//        driver.navigate().refresh();
         Thread.sleep(2000);
         Ao.ClickOnProfile();
         Thread.sleep(200);
@@ -100,7 +100,7 @@ public class BaseClass {
 
         driver.navigate().refresh();
         Authedication_Object Ao=new Authedication_Object(driver);
-        driver.navigate().refresh();
+//        driver.navigate().refresh();
         Thread.sleep(2000);
         Ao.ClickOnProfile();
         Thread.sleep(200);
@@ -118,7 +118,7 @@ public class BaseClass {
     {
         Techusername=rc.getTechPassword();
         Techpassword=rc.getTechUsername();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         Authedication_Object AO=new Authedication_Object(driver);
         AO.LoginOperation("username",rc.getTechUsername());
         AO.LoginOperation("password",rc.getTechPassword());

@@ -2,7 +2,6 @@ package org.example.POS_UI_Test.TestCases.ChashManagement;
 
 import org.example.POS_UI_Test.PageObject.CashManagement.Cash_Register_List_Objects;
 import org.example.POS_UI_Test.TestCases.BaseClass;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class Cash_Register_List_Test extends BaseClass {

@@ -12,8 +12,7 @@ import java.util.List;
 public class Tax_Setting_Test extends BaseClass {
     public Faker fk;
     @Test()
-    public void Validating_TaxSetting_Form()
-    {
+    public void Validating_TaxSetting_Form() throws InterruptedException {
         Tax_Setting_Objects ts=new Tax_Setting_Objects(driver);
         fk=new Faker();
         ts.ClickOnButtons("Profile Settings");
@@ -22,9 +21,9 @@ public class Tax_Setting_Test extends BaseClass {
         ts.EnterTheText("name",fk.name().firstName());
         ts.EnterTheText("rate",1+fk.number().digits(1));
         ts.ClickonSubmit();
-
+        Thread.sleep(1000);
         String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
-//        System.out.println(message);
+
         Validation("Form Submit Successful !",message,driver);
     }
     @Test(priority = 1,dependsOnMethods = "Validating_TaxSetting_Form")
@@ -59,7 +58,7 @@ public class Tax_Setting_Test extends BaseClass {
             driver.findElement(By.xpath("//button[normalize-space()=\"Yes\"]")).click();
 
             String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
-//        System.out.println(message);
+
             Validation("Tax Data Deleted successfully.. !",message,driver);
         }
     }

@@ -2,7 +2,7 @@ package org.example.POS_UI_Test.TestCases.Store_Login;
 
 import org.example.POS_UI_Test.PageObject.Store_Login.Store_Login_Objects;
 import org.example.POS_UI_Test.TestCases.BaseClass;
-import org.example.POS_UI_Test.TestCases.FoodManagement.Add_Menu_Test;
+import org.example.POS_UI_Test.TestCases.FoodManagement.Menu.Add_Menu_Test;
 import org.example.POS_UI_Test.TestCases.ProfileSetting.POS_Setting.POS_Setting_Test;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -26,7 +26,7 @@ public class Add_Menu_For_All_Store extends BaseClass {
         int k=1;
         int l=10;
         int j=2;
-        for (int i=0;i<200;i++)
+        for (int i=0;i<110;i++)
         {
             if (i==l)
             {
@@ -43,12 +43,13 @@ public class Add_Menu_For_All_Store extends BaseClass {
 
         return username;
     }
-    @Test(priority = 2)
+    @Test()
     public void AddMenu_Form_For_All_Store() throws InterruptedException {
         AbstractList<String> username= (GetAllDataOfStore());
-        for (int i=195;i<username.size();i++)
+        for (int i=105;i<username.size();i++)
         {
             try {
+                Thread.sleep(2000);
                 LoginMethod(String.valueOf(username.get(i)), "Praveen@123");
                 Thread.sleep(2000);
                 POS_Setting_Test.Validating_POS_Setting_Form();
@@ -56,10 +57,11 @@ public class Add_Menu_For_All_Store extends BaseClass {
 //                    for (int j=0;j<1;j++)
 //                    {
                 driver.navigate().refresh();
-                Add_Menu_Test.Validating_Add_Menu_Form();
+                Add_Menu_Test.Validating_Add_Menu_Forms();
                 driver.navigate().refresh();
 //                    }
                 Logout_Method();
+                Thread.sleep(2000);
 
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -67,6 +69,8 @@ public class Add_Menu_For_All_Store extends BaseClass {
                 throw new RuntimeException(e);
             }
         }
-
+        Thread.sleep(3000);
+        loginMethod();
+        Thread.sleep(3000);
     }
 }

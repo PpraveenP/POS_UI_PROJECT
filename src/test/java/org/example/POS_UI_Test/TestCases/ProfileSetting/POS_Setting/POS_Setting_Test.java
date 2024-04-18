@@ -41,4 +41,29 @@ public class POS_Setting_Test extends BaseClass {
 //        System.out.println(message);
         Validation("Form Submit Successfull !",message,driver);
     }
+    @Test()
+    public void Validating_POS_Setting_Form_Edit_Button() throws InterruptedException {
+        po=new POS_Setting_Objects(driver);
+        po.ClickOnButton("Profile Settings");
+        po.ClickOnButton("Pos Settings");
+        po.ClickOnEdit();
+        Thread.sleep(1000);
+        po.ClickOnUpdatePOS();
+        Thread.sleep(2000);
+        String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
+        Validation("Form updated successfully!",message,driver);
+
+    }
+    @Test()
+    public void Validating_POS_Setting_Form_Delete_Button() throws InterruptedException {
+        po=new POS_Setting_Objects(driver);
+        po.ClickOnButton("Profile Settings");
+        po.ClickOnButton("Pos Settings");
+        po.ClickOnDelete();
+        Thread.sleep(1000);
+        po.ClickOnDeleteYseButton();
+        Thread.sleep(2000);
+        String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
+        Validation("Sub Category Data Deleted successfully.. !",message,driver);
+    }
 }

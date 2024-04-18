@@ -24,7 +24,7 @@ public class Add_POS_Setting_For_All_Store extends BaseClass {
         int k=1;
         int l=10;
         int j=2;
-        for (int i=0;i<200;i++)
+        for (int i=0;i<110;i++)
         {
             if (i==l)
             {
@@ -45,7 +45,7 @@ public class Add_POS_Setting_For_All_Store extends BaseClass {
     @Test(priority = 3)
     public void Valiadting_POS_Setting_For_AllStore() throws InterruptedException {
         AbstractList<String> username= (GetAllDataOfStore());
-        for (int i=190;i<username.size();i++)
+        for (int i=105;i<username.size();i++)
         {
             try {
                 Thread.sleep(2000);
@@ -59,6 +59,8 @@ public class Add_POS_Setting_For_All_Store extends BaseClass {
                 throw new RuntimeException(e);
             }
         }
+        Thread.sleep(3000);
         loginMethod();
+        Thread.sleep(3000);
     }
 }

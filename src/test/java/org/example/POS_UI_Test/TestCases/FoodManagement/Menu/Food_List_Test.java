@@ -2,7 +2,6 @@ package org.example.POS_UI_Test.TestCases.FoodManagement.Menu;
 
 import org.example.POS_UI_Test.PageObject.FoodManagement.Menu.Food_List_Objects;
 import org.example.POS_UI_Test.TestCases.BaseClass;
-
 import org.testng.annotations.Test;
 
 public class Food_List_Test extends BaseClass {

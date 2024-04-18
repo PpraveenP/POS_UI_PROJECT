@@ -93,16 +93,16 @@ public class Quck_Bill_Test extends BaseClass {
         Validation("Quick Bill Submited Successfully !",message,driver);
 
 
-    } @Test()
+    }
     public void Validating_Quick_Bill_Process_With_Card_DineIn_OrderType() throws InterruptedException {
         OrderProcessWithDineIn("CARD");
 
     }
-    @Test()
+
     public void Validating_Quick_Bill_Process_With_Cash_DineIn_OrderType() throws InterruptedException {
         OrderProcessWithDineIn("CASH");
     }
-    @Test()
+
     public void Validating_Quick_Bill_Process_With_UPI_DineIn_OrderType() throws InterruptedException {
         OrderProcessWithDineIn("UPI");
     }

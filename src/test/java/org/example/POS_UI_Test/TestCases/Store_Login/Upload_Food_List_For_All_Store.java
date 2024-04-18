@@ -2,8 +2,7 @@ package org.example.POS_UI_Test.TestCases.Store_Login;
 
 import org.example.POS_UI_Test.PageObject.Store_Login.Store_Login_Objects;
 import org.example.POS_UI_Test.TestCases.BaseClass;
-import org.example.POS_UI_Test.TestCases.FoodManagement.Add_Menu_Test;
-import org.example.POS_UI_Test.TestCases.ProfileSetting.POS_Setting.POS_Setting_Test;
+import org.example.POS_UI_Test.TestCases.FoodManagement.Menu.Add_Menu_Test;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
@@ -11,21 +10,19 @@ import java.io.FileNotFoundException;
 import java.util.AbstractList;
 import java.util.ArrayList;
 
-import static org.example.POS_UI_Test.TestCases.FoodManagement.Add_Menu_Test.Validating_Upload_Food_List;
-
 public class Upload_Food_List_For_All_Store extends BaseClass {
     public ArrayList<String> username;
     @Test
     public void Validating_Upload_Food_List_For_All_Store()throws InterruptedException {
 
         AbstractList<String> username= (GetAllDataOfStore());
-        for (int i=190;i<username.size();i++)
+        for (int i=105;i<username.size();i++)
         {
             try {
                 Thread.sleep(2000);
                 LoginMethod(String.valueOf(username.get(i)), "Praveen@123");
                 Thread.sleep(2000);
-               Add_Menu_Test.Validating_Upload_Food_List();
+                Add_Menu_Test.Validating_Upload_Food_List();
                 Thread.sleep(2000);
                 Logout_Method();
 
@@ -35,7 +32,9 @@ public class Upload_Food_List_For_All_Store extends BaseClass {
                 throw new RuntimeException(e);
             }
         }
+        Thread.sleep(3000);
         loginMethod();
+        Thread.sleep(3000);
     }
     public AbstractList<String> GetAllDataOfStore() throws InterruptedException {
         Thread.sleep(3000);
@@ -50,7 +49,7 @@ public class Upload_Food_List_For_All_Store extends BaseClass {
         int k=1;
         int l=10;
         int j=2;
-        for (int i=0;i<200;i++)
+        for (int i=0;i<110;i++)
         {
             if (i==l)
             {

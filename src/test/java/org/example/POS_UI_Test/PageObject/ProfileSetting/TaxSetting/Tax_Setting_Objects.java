@@ -14,8 +14,8 @@ public class Tax_Setting_Objects {
     {
         ldriver=rdriver;
         PageFactory.initElements(rdriver,this);
-         tb=new WebElement[]{name,rate};
-         bt=new WebElement[]{ProfileSettings,TaxSettings};
+        tb=new WebElement[]{name,rate};
+        bt=new WebElement[]{ProfileSettings,TaxSettings};
     }
     @FindBy(xpath = "//p[normalize-space()=\"Profile Settings\"]")
     WebElement ProfileSettings;

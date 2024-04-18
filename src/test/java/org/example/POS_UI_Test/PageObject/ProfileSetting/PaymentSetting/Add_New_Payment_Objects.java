@@ -13,8 +13,8 @@ public class Add_New_Payment_Objects {
     {
         ldriver=rdriver;
         PageFactory.initElements(rdriver,this);
-       tb=new WebElement[]{bankName,branchName,accountNo,ifscCode,upiId};
-       bt=new WebElement[]{ProfileSettings,PaymentSettings};
+        tb=new WebElement[]{bankName,branchName,accountNo,ifscCode,upiId};
+        bt=new WebElement[]{ProfileSettings,PaymentSettings};
     }
     @FindBy(xpath = "//p[normalize-space()=\"Profile Settings\"]")
     WebElement ProfileSettings;
@@ -36,8 +36,44 @@ public class Add_New_Payment_Objects {
     {
         AddPaymentDetails.click();
     }
-    @FindBy(xpath = "dd")
-    WebElement tt;
+    @FindBy(xpath = "//tbody/tr[1]/td[7]/div[1]/a[1]//*[name()=\"svg\"]")
+    WebElement Edit;
+
+    public void ClickOnEdit()
+    {
+        Edit.click();
+    }
+    @FindBy(xpath = "//tbody/tr[1]/td[7]/div[1]/div[1]//*[name()=\"svg\"]")
+    WebElement Delete;
+    public void ClickOnDelete()
+    {
+        Delete.click();
+    }
+    @FindBy(xpath = "//span[normalize-space()=\"+\"]")
+    WebElement AddDetails;
+    public void ClickOnAddDetails()
+    {
+        AddDetails.click();
+    }
+    @FindBy(xpath = "//input[@placeholder=\"Search\"]")
+    WebElement Search;
+    public void ClickOnSearch()
+    {
+        Search.click();
+    }
+    @FindBy(xpath = "//button[normalize-space()=\"Update Payment Details\"]")
+    WebElement UpdatePaymentDetails;
+    public void ClickOnUpdatePaymentDetails()
+    {
+        UpdatePaymentDetails.click();
+    }
+    @FindBy(xpath = "//button[normalize-space()=\"Yes\"]")
+    WebElement Yes;
+    public void ClickOnDeleteYseButton()
+    {
+        Yes.click();
+    }
+
 
     public void ClickOnButton(String name)
     {

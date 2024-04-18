@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class KOT_Test extends BaseClass {
-    @Test()
+    @Test(priority = 1)
     public void Validating_KOT_Prepared_Process() throws InterruptedException {
         KOT_Objects kot=new KOT_Objects(driver);
         kot.ClickOnButton("Order Management");
@@ -20,7 +20,7 @@ public class KOT_Test extends BaseClass {
         Thread.sleep(2000);
         Validation("Order Prepared Successfully!!",message,driver);
     }
-    @Test()
+    @Test(priority = 2)
     public void Validating_KOT_Prepare_Process_For_All_Order() throws InterruptedException {
         KOT_Objects kot=new KOT_Objects(driver);
         kot.ClickOnButton("Order Management");

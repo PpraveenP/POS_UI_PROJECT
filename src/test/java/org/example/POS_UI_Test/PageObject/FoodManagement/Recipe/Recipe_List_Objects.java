@@ -41,6 +41,12 @@ public class Recipe_List_Objects {
     {
         Delete.click();
     }
+    @FindBy(xpath = "//button[normalize-space()=\"Yes\"]")
+    WebElement DeleteYes;
+    public void ClickOnDeleteYes()
+    {
+        DeleteYes.click();
+    }
     public void ClickOnButton(String name)
     {
         WebElement[] bt=new WebElement[]{FoodManagement,RecipeList};

@@ -1,4 +1,4 @@
-package org.example.POS_UI_Test.TestCases.FoodManagement;
+package org.example.POS_UI_Test.TestCases.FoodManagement.Menu;
 
 import com.github.javafaker.Faker;
 import org.example.POS_UI_Test.PageObject.FoodManagement.Menu.Add_Menu_Objects;
@@ -63,6 +63,40 @@ public class Add_Menu_Test extends BaseClass {
         String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
 //        System.out.println(message);
         Validation("Excel File added Successfully",message,driver);
+
+    }
+    public static void Validating_Add_Menu_Forms() throws FileNotFoundException, InterruptedException {
+        Add_Inventory ai=new Add_Inventory();
+        Faker fk=new Faker();
+        ai.setFoodName(fk.food().dish());
+        ai.setFoodCode(fk.number().digits(2));
+        ai.setPrice(fk.number().digits(2)+9);
+        ai.setDescription("yammy............");
+        ai.setImage(fk.name().lastName());
+
+
+        Add_Menu_Objects am=new Add_Menu_Objects(driver);
+        am.ClickOnButtons("Food Management");
+        am.ClickOnButtons("Add Menu");
+
+        am.EnterTheText("foodName",ai.getFoodName());
+        am.EnterTheText("foodCode",ai.getFoodCode());
+        am.EnterTheText("price",ai.getPrice());
+        am.EnterTheText("description",ai.getDescription());
+        File f = new File(".//Images/foodimage3.png");
+        String imagePath = f.getAbsolutePath();
+        am.EnterTheText("image", imagePath);
+        am.ClickOnDropdown("select-category");
+        driver.findElement(By.xpath("//li[normalize-space()=\"Veg\"]")).click();
+        am.ClickOnDropdown("select-subCategory");
+        driver.findElement(By.xpath("//li[normalize-space()=\"Veg\"]")).click();
+
+        am.ClickOnSubmitButton();
+//        Thread.sleep(2000);
+//
+//        String message = driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 css-1ey4h9j\"]")).getText();
+////        System.out.println(message);
+//        Validation("Form Submit Successfull !",message,driver);
 
     }
 

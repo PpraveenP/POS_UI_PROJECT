@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class Update_Role_Access_Test extends BaseClass {
     @Test()
-            public void Validating_Update_Role_Access() throws InterruptedException {
+    public void Validating_Update_Role_Access() throws InterruptedException {
 
         Update_Role_Access_Objects up = new Update_Role_Access_Objects(driver);
         up.ClickonButton("Role Permission");

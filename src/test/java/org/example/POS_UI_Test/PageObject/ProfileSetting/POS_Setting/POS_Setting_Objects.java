@@ -30,6 +30,34 @@ public class POS_Setting_Objects {
     {
         Submit.click();
     }
+
+    @FindBy(xpath = "//tbody/tr[1]/td[1]/div[1]/a[1]//*[name()=\"svg\"]")
+    WebElement Edit;
+
+    public void ClickOnEdit()
+    {
+        Edit.click();
+    }
+    @FindBy(xpath = "//tbody/tr[1]/td[1]/div[1]/div[1]//*[name()=\"svg\"]")
+    WebElement Delete;
+    public void ClickOnDelete()
+    {
+        Delete.click();
+    }
+
+    @FindBy(xpath = "//button[normalize-space()=\"Submit\"]")
+    WebElement Update;
+    public void ClickOnUpdatePOS()
+    {
+        Update.click();
+    }
+    @FindBy(xpath = "//button[normalize-space()=\"Yes\"]")
+    WebElement Yes;
+    public void ClickOnDeleteYseButton()
+    {
+        Yes.click();
+    }
+
     public void ClickOnButton(String Name)
     {
         for (WebElement b:bt)

@@ -1,4 +1,4 @@
-package org.example.POS_UI_Test.PageObject.FoodManagement;
+package org.example.POS_UI_Test.PageObject.FoodManagement.Recipe;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
