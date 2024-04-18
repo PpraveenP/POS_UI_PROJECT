@@ -1,13 +1,10 @@
 package org.example.POS_UI_Test.TestCases.FoodManagement;
 
 import com.github.javafaker.Faker;
-import org.example.POS_UI_Test.PageObject.FoodManagement.Add_Recipe_Objects;
+import org.example.POS_UI_Test.PageObject.FoodManagement.Recipe.Add_Recipe_Objects;
 import org.example.POS_UI_Test.TestCases.BaseClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class Add_Recipe_Test extends BaseClass {
     @Test()
