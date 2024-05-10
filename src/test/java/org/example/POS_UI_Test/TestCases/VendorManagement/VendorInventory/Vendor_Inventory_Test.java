@@ -34,7 +34,10 @@ public class Vendor_Inventory_Test extends BaseClass {
 
         vi.ClickDropDown("Select Vendor");
 //        driver.findElement(By.xpath("//div[@class=\"MuiBox-root css-k008qs\"]//li[1]")).click();
-        driver.findElement(By.xpath("//li[normalize-space()=\"harish\"]")).click();
+//        driver.findElement(By.xpath("//li[normalize-space()=\"harish\"]")).click();
+        Thread.sleep(2000);
+        int size = driver.findElements(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li")).size();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li["+size+"]")).click();
         vi.EnterTheText("itemName",ao.getFoodName());
         vi.EnterTheText("inventoryCode",ao.getInventoryCode());
         vi.EnterTheText("quantity",ao.getQuantity());

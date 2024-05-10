@@ -16,8 +16,8 @@ public class Vendor_Payment_Objects {
     {
         ldriver=rdriver;
         PageFactory.initElements(rdriver,this);
-       vp=new WebElement[]{dueDate,bankName,branch,accountNo,ifscCode,upiId,total};
-       buttons=new WebElement[]{VendorManagement,VendorPayment};
+//       vp=new WebElement[]{dueDate,bankName,branch,accountNo,ifscCode,upiId,total};
+//       buttons=new WebElement[]{VendorManagement,VendorPayment};
     }
     @FindBy(xpath = "//p[normalize-space()=\"Vendor Management\"]")
     WebElement VendorManagement;
@@ -25,35 +25,36 @@ public class Vendor_Payment_Objects {
     @FindBy(xpath = "//span[normalize-space()=\"Vendor Payment\"]")
     WebElement VendorPayment;
 
-    @FindBy(xpath = "//div[@id=\"mui-component-select-vendorName\"]")
+    @FindBy(xpath = "//div[@id='mui-component-select-vendorName']")
     WebElement vendorName;
 
-    @FindBy(xpath = "//input[@name=\"dueDate\"]")
+    @FindBy(xpath = "//input[@name='dueDate']")
     WebElement dueDate;
 
-    @FindBy(xpath = "//input[@name=\"bankName\"]")
+    @FindBy(xpath = "//input[@name='bankName']")
     WebElement bankName;
 
-    @FindBy(xpath = "//input[@name=\"branch\"]")
+    @FindBy(xpath = "//input[@name='branch']")
     WebElement branch;
 
-    @FindBy(xpath = "//input[@name=\"accountNo\"]")
+    @FindBy(xpath = "//input[@name='accountNo']")
     WebElement accountNo;
 
-    @FindBy(xpath = "//input[@name=\"ifscCode\"]")
+    @FindBy(xpath = "//input[@name='ifscCode']")
     WebElement ifscCode;
 
-    @FindBy(xpath = "//input[@name=\"upiId\"]")
+    @FindBy(xpath = "//input[@name='upiId']")
     WebElement upiId;
 
-    @FindBy(xpath = "//input[@name=\"total\"]")
+    @FindBy(xpath = "//input[@name='total']")
     WebElement total;
 
-    @FindBy(xpath = "//button[normalize-space()=\"Submit\"]")
+    @FindBy(xpath = "//button[normalize-space()='Submit']")
     WebElement Submit;
 
     public void EnterTheText(String name, String value)
     {
+        vp=new WebElement[]{dueDate,bankName,branch,accountNo,ifscCode,upiId,total};
         for (WebElement e:vp)
         {
             if (e.getAttribute("name").contains(name))
@@ -64,6 +65,7 @@ public class Vendor_Payment_Objects {
     }
     public void ClickOnButtons(String name)
     {
+        buttons=new WebElement[]{VendorManagement,VendorPayment};
         for (WebElement b:buttons)
         {
             if (b.getText().contains(name))

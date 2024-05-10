@@ -20,33 +20,33 @@ public class Vendor_Inventory_Objects {
     {
         ldriver=rdriver;
         PageFactory.initElements(rdriver,this);
-        tx=new WebElement[]{inventoryCode,quantity,price,discount,itemName};
-        bt=new WebElement[]{VendorManagement,VendorInventory};
-        dp=new WebElement[]{vendorName,selectUnit};
-        vv=new WebElement[]{Kg,Gram,Pieces};
+//        tx=new WebElement[]{inventoryCode,quantity,price,discount,itemName};
+//        bt=new WebElement[]{VendorManagement,VendorInventory};
+//        dp=new WebElement[]{vendorName,selectUnit};
+//        vv=new WebElement[]{Kg,Gram,Pieces};
     }
     @FindBy(xpath = "//p[normalize-space()=\"Vendor Management\"]")
     WebElement VendorManagement;
     @FindBy(xpath = "//span[normalize-space()=\"Vendor Inventory\"]")
     WebElement VendorInventory;
-    @FindBy(xpath = "//div[@id=\"mui-component-select-vendorName\"]")
+    @FindBy(xpath = "//div[@id='mui-component-select-vendorName']")
     WebElement vendorName;
-    @FindBy(xpath = "//input[@name=\"itemName\"]")
+    @FindBy(xpath = "//input[@name='itemName']")
     WebElement itemName;
 
-    @FindBy(xpath = "//input[@name=\"inventoryCode\"]")
+    @FindBy(xpath = "//input[@name='inventoryCode']")
     WebElement inventoryCode;
 
-    @FindBy(xpath = "//input[@name=\"quantity\"]")
+    @FindBy(xpath = "//input[@name='quantity']")
     WebElement quantity;
 
-    @FindBy(xpath = "//input[@name=\"price\"]")
+    @FindBy(xpath = "//input[@name='price']")
     WebElement price;
 
-    @FindBy(xpath = "//input[@name=\"discount\"]")
+    @FindBy(xpath = "//input[@name='discount']")
     WebElement discount;
 
-    @FindBy(xpath = "//button[normalize-space()=\"Submit\"]")
+    @FindBy(xpath = "//button[normalize-space()='Submit']")
     WebElement Submit;
     public void ClickOnSubmit()
     {
@@ -59,7 +59,7 @@ public class Vendor_Inventory_Objects {
     @FindBy(xpath = "//div[@id=\"mui-component-select-itemName\"]")
     WebElement selectItemName;
 
-    @FindBy(xpath = "//div[@id=\"mui-component-select-unit\"]")
+    @FindBy(xpath = "//div[@id='mui-component-select-unit']")
     WebElement selectUnit;
 
     @FindBy(xpath = "//li[normalize-space()=\"Kg\"]")
@@ -79,6 +79,7 @@ public class Vendor_Inventory_Objects {
 
     public void EnterTheText(String name,String values)
     {
+        tx=new WebElement[]{inventoryCode,quantity,price,discount,itemName};
         for (WebElement e:tx)
         {
             if(e.getAttribute("name").contains(name))
@@ -89,6 +90,7 @@ public class Vendor_Inventory_Objects {
     }
     public void ClickOnButtton(String name)
     {
+        bt=new WebElement[]{VendorManagement,VendorInventory};
         for (WebElement b:bt)
         {
             if (b.getText().contains(name))
@@ -100,6 +102,7 @@ public class Vendor_Inventory_Objects {
     }
     public void ClickDropDown(String name)
     {
+        dp=new WebElement[]{vendorName,selectUnit};
         for (WebElement e:dp)
         {
             if(e.getText().contains(name))

@@ -2,12 +2,15 @@ package org.example.POS_UI_Test.TestCases.RoleManagement.UserRoleAccess;
 
 import org.example.POS_UI_Test.PageObject.RoleManagement.UserRoleAccess.User_Role_Access_Objects;
 import org.example.POS_UI_Test.TestCases.BaseClass;
+import org.example.POS_UI_Test.TestCases.UserManagement.Add_User_Test;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class User_Role_Access_Test extends BaseClass {
     @Test()
     public void Validating_User_Role_Access() throws InterruptedException {
+
+        Add_User_Test.Validating_Add_User_Forms();
         User_Role_Access_Objects ur=new User_Role_Access_Objects(driver);
         ur.ClickonButton("Role Permission");
         ur.ClickonButton("User Role Access");
@@ -18,7 +21,7 @@ public class User_Role_Access_Test extends BaseClass {
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li["+size+"]")).click();
 
-        for (int i=1; i<=9; i++)
+        for (int i=1; i<=8; i++)
         {
             driver.findElement(By.xpath("(//input[@aria-label='Checkbox demo'])["+i+"]")).click();
         }

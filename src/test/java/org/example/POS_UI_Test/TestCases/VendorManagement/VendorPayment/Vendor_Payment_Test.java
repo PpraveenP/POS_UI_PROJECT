@@ -39,7 +39,10 @@ public class Vendor_Payment_Test extends BaseClass {
 
 
         vp.ClickOnDropDown("mui-component-select-vendorName");
-        driver.findElement(By.xpath("//li[normalize-space()=\"harish\"]")).click();
+//        driver.findElement(By.xpath("//li[normalize-space()=\"harish\"]")).click();
+        Thread.sleep(2000);
+        int size = driver.findElements(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li")).size();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[3]/ul[1]/li["+size+"]")).click();
         vp.EnterTheText("dueDate",ad.getDueDate());
         vp.EnterTheText("bankName",ad.getBankName());
         vp.EnterTheText("branch",ad.getBranch());
